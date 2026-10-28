@@ -47,21 +47,23 @@ const usable = (row: TokenRow) => row.status === 1 || row.status === 5;
 export function registerTools(server: McpServer, client: Proxy302Client): void {
   server.registerTool('get_account_usage', {
     title: 'Account, traffic balance and usage',
-    description: 'Show the account tied to the API key, remaining prepaid traffic, and traffic used per day for the last N days. Read-only.',
+    description: 'Show the account tied to the API key, wallet balance (PTC), remaining prepaid traffic, and traffic used per day for the last N days. Read-only.',
     inputSchema: { days: z.number().int().min(1).max(90).default(7).describe('How many past days of usage to include') },
     annotations: { readOnlyHint: true, openWorldHint: false },
   }, safe(async ({ days }) => {
     const end = Math.floor(Date.now() / 1000);
-    const [me, pool, usage] = await Promise.all([client.me(), client.trafficPool(), client.consumeSummary(end - days * 86400, end)]);
+    const [me, pool, usage, wallet] = await Promise.all([client.me(), client.trafficPool(), client.consumeSummary(end - days * 86400, end),
+      // Older servers do not have the wallet endpoint yet: degrade gracefully instead of failing the whole call.
+      client.wallet().catch(() => null)]);
     return ok({
       account: { name: me.name, email: me.email, uid: me.uid, active: me.is_use === 1 },
+      wallet_balance_ptc: wallet ? wallet.balance : 'unavailable',
       traffic_remaining: formatBytes(pool.remaining_traffic),
       traffic_pools: pool.traffic_pools.map(p => ({
         id: p.id, name: p.en_name ?? p.name, used: formatBytes(p.current_cost_traffic as string), total: formatBytes(p.total_traffic as string),
         expires_at: p.expired_on ? new Date(Number(p.expired_on) * 1000).toISOString() : 'never',
       })),
       usage_last_days: { days, by_category_total: Object.fromEntries(Object.entries(usage.summary).map(([k, v]) => [k, formatBytes(v)])), day_keys: usage.keys },
-      note: 'Wallet (PTC) balance is not exposed by the API yet; this shows prepaid traffic.',
     });
   }));
 

@@ -116,6 +116,19 @@ describe('MCP tools', () => {
     expect(r).not.toContain('secretpass');
     expect(r).toContain('se****ss');
   });
+  it('get_account_usage returns the wallet balance and degrades if the endpoint is missing', async () => {
+    const mk = (walletOk: boolean) => connect((async (u: URL) => {
+      if (u.pathname.endsWith('/user/users/me')) return envelope({ name: 'n', email: 'e', uid: 1, is_use: 1 });
+      if (u.pathname.endsWith('/user/users/wallet')) return walletOk ? envelope({ balance: '12.345', balance_milli_ptc: 12345, currency: 'PTC' }) : new Response('nope', { status: 404 });
+      if (u.pathname.endsWith('/traffic/pool/remaining')) return envelope({ remaining_traffic: '1073741824', traffic_pools: [] });
+      return envelope({ keys: [], summary: {}, values: {} });
+    }) as never);
+    const ok = JSON.parse(text(await (await mk(true)).callTool({ name: 'get_account_usage', arguments: {} })));
+    expect(ok.wallet_balance_ptc).toBe('12.345');
+    const old = JSON.parse(text(await (await mk(false)).callTool({ name: 'get_account_usage', arguments: {} })));
+    expect(old.wallet_balance_ptc).toBe('unavailable');
+    expect(old.traffic_remaining).toBe('1.00 GB');
+  });
   it('surfaces API errors as tool errors, not crashes', async () => {
     const client = await connect((async () => envelope(null, 401, 'invalid API credential')) as never);
     const r = await client.callTool({ name: 'get_account_usage', arguments: {} });

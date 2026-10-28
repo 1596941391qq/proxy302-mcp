@@ -36,7 +36,7 @@ claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y proxy3
 
 | 工具 | 作用 |
 |---|---|
-| `get_account_usage` | 账号、剩余预付流量、各流量包余额、最近 N 天用量 |
+| `get_account_usage` | 账号、钱包 PTC 余额、剩余预付流量、各流量包余额、最近 N 天用量 |
 | `list_countries` | 可定向的国家（含 id 和 ISO 代码） |
 | `list_regions` | 某国的州，或某州的城市 |
 | `list_products` | 产品线与静态 IP 套餐 |

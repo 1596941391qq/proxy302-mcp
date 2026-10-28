@@ -74,6 +74,7 @@ export class Proxy302Client {
   }
 
   me() { return this.request<{ name: string; email: string; is_use: number; uid: number | string }>('GET', 'user/users/me'); }
+  wallet() { return this.request<{ balance: string; balance_milli_ptc: number; currency: string }>('GET', 'user/users/wallet'); }
   areas(type: 'country' | 'state' | 'city', pid?: string, name?: string) {
     return this.request<{ data: Array<{ id: number; name: string; code?: string; pid?: number }> }>('GET', `proxy/area/${type}`, { pid, name });
   }

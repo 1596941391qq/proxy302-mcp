@@ -53,7 +53,7 @@ Requires Node.js 20+.
 
 | Tool | What it does |
 |---|---|
-| `get_account_usage` | Account, remaining prepaid traffic, per-pool balance and daily usage for the last N days |
+| `get_account_usage` | Account, wallet (PTC) balance, remaining prepaid traffic, per-pool balance and daily usage for the last N days |
 | `list_countries` | Countries you can target, with ids and ISO codes (name filter) |
 | `list_regions` | States of a country, or cities of a state |
 | `list_products` | Product lines and static IP plans (data center and residential) |
