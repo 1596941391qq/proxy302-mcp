@@ -1,0 +1,49 @@
+{
+  "name": "proxy302-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Proxy302: check usage, browse locations, get residential proxy credentials and fetch pages through a proxy from Claude, Cursor and other AI tools.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "proxy302-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node -e \"require('fs').chmodSync('dist/index.js',0o755)\"",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "proxy",
+    "residential-proxy",
+    "web-scraping",
+    "claude",
+    "cursor",
+    "ai-agent"
+  ],
+  "homepage": "https://proxy302.com",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "turndown": "^7.2.4",
+    "undici": "^8.12.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/turndown": "^5.0.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
