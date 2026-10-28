@@ -91,7 +91,6 @@ console.log(await page.textContent('body'));
 
 ```python
 from browser_use import Agent, Browser, BrowserConfig
-from browser_use.browser.context import BrowserContextConfig  # API names vary by version
 
 browser = Browser(config=BrowserConfig(
     proxy={"server": "http://HOST:PORT", "username": "USERNAME", "password": "PASSWORD"},
