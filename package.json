@@ -33,7 +33,7 @@
     "cursor",
     "ai-agent"
   ],
-  "homepage": "https://proxy302.com",
+  "homepage": "https://github.com/1596941391qq/proxy302-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
     "turndown": "^7.2.4",
@@ -45,5 +45,12 @@
     "@types/turndown": "^5.0.6",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1596941391qq/proxy302-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1596941391qq/proxy302-mcp/issues"
   }
 }
