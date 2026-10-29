@@ -19,7 +19,7 @@
 福利：付费账户第一次通过 proxy302-mcp 调用成功，Proxy302 会送 **1 PTC**（每个账户一次）。
 
 ```bash
-claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y proxy302-mcp
+claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y github:1596941391qq/proxy302-mcp
 ```
 
 ### Claude Desktop
@@ -29,7 +29,7 @@ claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y proxy3
   "mcpServers": {
     "proxy302": {
       "command": "npx",
-      "args": ["-y", "proxy302-mcp"],
+      "args": ["-y", "github:1596941391qq/proxy302-mcp"],
       "env": { "PROXY302_API_KEY": "<key id>:<secret>" }
     }
   }

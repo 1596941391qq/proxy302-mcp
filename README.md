@@ -18,7 +18,7 @@ Give your AI assistant a real residential-proxy toolbox. `proxy302-mcp` is a [Mo
 2. Install:
 
 ```bash
-claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y proxy302-mcp
+claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y github:1596941391qq/proxy302-mcp
 ```
 
 Requires Node.js 20+.
@@ -34,7 +34,7 @@ Bonus: Proxy302 credits **1 PTC** to paid accounts the first time a call through
   "mcpServers": {
     "proxy302": {
       "command": "npx",
-      "args": ["-y", "proxy302-mcp"],
+      "args": ["-y", "github:1596941391qq/proxy302-mcp"],
       "env": { "PROXY302_API_KEY": "<key id>:<secret>" }
     }
   }
@@ -50,7 +50,7 @@ Bonus: Proxy302 credits **1 PTC** to paid accounts the first time a call through
   "mcpServers": {
     "proxy302": {
       "command": "npx",
-      "args": ["-y", "proxy302-mcp"],
+      "args": ["-y", "github:1596941391qq/proxy302-mcp"],
       "env": { "PROXY302_API_KEY": "<key id>:<secret>" }
     }
   }
