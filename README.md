@@ -1,8 +1,14 @@
+<p align="center"><img src="https://raw.githubusercontent.com/1596941391qq/proxy302-mcp/main/docs/images/hero.svg" alt="proxy302-mcp: residential proxies as tools for your AI assistant" width="100%"></p>
+
 # proxy302-mcp
+
+> **Community project.** proxy302-mcp is built and maintained by an independent developer in the Proxy302 community, and is listed on the [Proxy302 tools page](https://proxy302.com/tools). It is not an official Proxy302 product: for account, billing or connection questions contact Proxy302 support; for bugs in this server, open a [GitHub issue](https://github.com/1596941391qq/proxy302-mcp/issues).
 
 Give your AI assistant a real residential-proxy toolbox. `proxy302-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) server for [Proxy302](https://proxy302.com): check your traffic and usage, browse countries and plans, get a rotating residential proxy URL for any country, list your proxies and static IPs, and fetch a web page through a proxy, all from Claude Code, Claude Desktop, Cursor or any MCP client.
 
 [中文说明](README.zh-CN.md)
+
+<p align="center"><img src="https://raw.githubusercontent.com/1596941391qq/proxy302-mcp/main/docs/images/how-it-works.svg" alt="How it works: your AI assistant talks to proxy302-mcp on your machine, which calls the Proxy302 API with your key and fetches pages through a residential IP" width="100%"></p>
 
 > v1 is deliberately **read-only and spend-free**: it never buys, renews or tops up anything. The one write it can do (creating a dynamic proxy credential) is free, off by default, and only bills traffic when you actually use it.
 
@@ -16,6 +22,8 @@ claude mcp add proxy302 -e PROXY302_API_KEY="<key id>:<secret>" -- npx -y proxy3
 ```
 
 Requires Node.js 20+.
+
+Bonus: Proxy302 credits **1 PTC** to paid accounts the first time a call through proxy302-mcp succeeds (once per account).
 
 ### Claude Desktop
 
@@ -64,6 +72,8 @@ Requires Node.js 20+.
 Not in v1, on purpose: purchases, renewals, top-ups.
 
 ## Examples
+
+<p align="center"><img src="https://raw.githubusercontent.com/1596941391qq/proxy302-mcp/main/docs/images/demo.svg" alt="Example session: checking remaining traffic, getting a Germany proxy and fetching a page through it" width="100%"></p>
 
 Ask your assistant:
 

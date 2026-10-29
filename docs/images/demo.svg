@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="560" viewBox="0 0 860 560" role="img" aria-label="Example session in Claude Code: checking remaining traffic, getting a Germany residential proxy and fetching a page through it">
+  <rect width="860" height="560" rx="20" fill="#0b1020"/>
+  <rect width="860" height="44" rx="20" fill="#161d33"/>
+  <rect y="24" width="860" height="20" fill="#161d33"/>
+  <circle cx="30" cy="22" r="7" fill="#ff5f57"/>
+  <circle cx="54" cy="22" r="7" fill="#febc2e"/>
+  <circle cx="78" cy="22" r="7" fill="#28c840"/>
+  <text x="430" y="28" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" fill="#94a3b8">Example session · illustrative values</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="19">
+    <text x="36" y="92" fill="#e2e8f0"><tspan fill="#38bdf8">&gt; </tspan>How much proxy traffic do I have left? Then fetch</text>
+    <text x="59" y="120" fill="#e2e8f0">example.com/pricing from Germany and summarise it.</text>
+
+    <text x="36" y="170" fill="#34d399">● <tspan fill="#f8fafc" font-weight="700">proxy302 · get_account_usage</tspan><tspan fill="#64748b"> (days: 7)</tspan></text>
+    <text x="59" y="198" fill="#94a3b8">⎿ Wallet 42.50 PTC · Dynamic traffic left 3.20 GB</text>
+    <text x="82" y="226" fill="#94a3b8">Used last 7 days 1.12 GB · busiest day Tue 0.41 GB</text>
+
+    <text x="36" y="276" fill="#34d399">● <tspan fill="#f8fafc" font-weight="700">proxy302 · get_dynamic_proxy</tspan><tspan fill="#64748b"> (country: DE)</tspan></text>
+    <text x="59" y="304" fill="#94a3b8">⎿ http://user-••••:••••@&lt;gateway&gt;:&lt;port&gt;  (rotating, Germany)</text>
+
+    <text x="36" y="354" fill="#34d399">● <tspan fill="#f8fafc" font-weight="700">proxy302 · fetch_url</tspan><tspan fill="#64748b"> (url: example.com/pricing, country: DE)</tspan></text>
+    <text x="59" y="382" fill="#94a3b8">⎿ 200 OK · 6.4 KB · returned as Markdown</text>
+
+    <text x="36" y="434" fill="#f8fafc">You have <tspan fill="#fbbf24">3.20 GB</tspan> of dynamic traffic left (1.12 GB used this week).</text>
+    <text x="36" y="462" fill="#f8fafc">From a German IP the pricing page shows three plans in EUR,</text>
+    <text x="36" y="490" fill="#f8fafc">with the Pro plan at €29/month…</text>
+  </g>
+  <text x="824" y="536" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#475569">Values above are examples, not real account data</text>
+</svg>
