@@ -2,7 +2,7 @@
 
 # proxy302-mcp
 
-> **社区项目。** proxy302-mcp 由 Proxy302 社区的独立开发者开发和维护，已被 [Proxy302 工具页](https://proxy302.com/tools) 收录。它不是 Proxy302 官方产品：账户、计费、连接问题请联系 Proxy302 客服；这个服务器本身的 bug 请提 [GitHub issue](https://github.com/1596941391qq/proxy302-mcp/issues)。
+> **社区项目。** proxy302-mcp 由 Proxy302 社区的独立开发者开发和维护，已被 [Proxy302 开发者文档](https://proxy302.com/zh/developer-docs/#community) 收录。它不是 Proxy302 官方产品：账户、计费、连接问题请联系 Proxy302 客服；这个服务器本身的 bug 请提 [GitHub issue](https://github.com/1596941391qq/proxy302-mcp/issues)。
 
 给你的 AI 助手一套真正的住宅代理工具。`proxy302-mcp` 是 [Proxy302](https://proxy302.com) 的 [MCP](https://modelcontextprotocol.io) 服务器：在 Claude Code、Claude Desktop、Cursor 等工具里查流量和用量、看可用国家和套餐、按国家拿动态住宅代理连接串、列出你的代理和静态 IP，还能通过代理抓取网页。
 
